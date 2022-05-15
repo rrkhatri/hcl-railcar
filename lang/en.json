@@ -1,0 +1,14 @@
+{
+    "yard": "Yard",
+    "north_gate":  "North Gate",
+    "south_side":  "South Side",
+    "platform_1":  "Platform 1",
+    "platform_2":  "Platform 2",
+    "platform_3":  "Platform 3",
+
+    "parked":  "Parked",
+    "loading":  "Loading",
+    "loaded":  "Loaded",
+    "shipped":  "Shipped",
+    "archived":  "Archived"
+}
