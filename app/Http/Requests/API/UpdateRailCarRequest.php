@@ -19,8 +19,8 @@ class UpdateRailCarRequest extends FormRequest
             'name'         => ['required', 'string', 'min:3', 'max:255'],
             'area'         => ['required', Rule::in(Railcar::areas())],
             'status'       => ['required', Rule::in(Railcar::statuses())],
-            'arrival_date' => ['required', 'date', 'date_format:Y-m-d\Th:i', 'after:now'],
-            'due_date'     => ['required', 'date', 'date_format:Y-m-d\Th:i', 'after:now'],
+            'arrival_date' => ['required', 'date', 'date_format:Y-m-d\TH:i', 'after:now'],
+            'due_date'     => ['required', 'date', 'date_format:Y-m-d\TH:i', 'after:now'],
         ];
     }
 

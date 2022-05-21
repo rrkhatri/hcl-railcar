@@ -18,6 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('railcars', 'App\Http\Controllers\API\RailcarController');
+Route::middleware('guest')->post('login', 'App\Http\Controllers\API\LoginController@login');
 
-Route::get('options/{type}', 'App\Http\Controllers\API\OptionController@index');
+Route::middleware('auth:sanctum')->group(function() {
+    Route::post('logout', 'App\Http\Controllers\API\LoginController@logout');
+
+    Route::apiResource('railcars', 'App\Http\Controllers\API\RailcarController');
+
+    Route::get('options/{type}', 'App\Http\Controllers\API\OptionController@index');
+});

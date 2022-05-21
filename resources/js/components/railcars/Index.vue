@@ -50,6 +50,7 @@
         </div>
 
         <railcar-create />
+
         <railcar-edit />
     </div>
 </template>
@@ -65,6 +66,7 @@ export default {
     data() {
         return {
             page: 1,
+            records: 0,
             paginator: {},
             railcars: [],
         }
@@ -86,6 +88,7 @@ export default {
                 .then(response => {
                     this.railcars = response.data.data;
                     this.paginator = response.data.meta;
+                    this.records = this.paginator.total;
                 });
         },
 
@@ -115,10 +118,6 @@ export default {
         perPage() {
             return this.paginator ? this.paginator.per_page : 10;
         },
-
-        records() {
-            return this.paginator ? this.paginator.total : 0;
-        }
     }
 }
 </script>

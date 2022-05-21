@@ -107,12 +107,10 @@ export default {
         },
 
         selectArea(event) {
-            console.log(event.target.value);
             this.railcar.area = event.target.value;
         },
 
         selectStatus(event) {
-            console.log(event.target.value);
             this.railcar.status = event.target.value;
         },
 
